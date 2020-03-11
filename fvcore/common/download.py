@@ -25,6 +25,15 @@ def download(
     Returns:
         str: the path to the downloaded file or the existing one.
     """
+    print("Default dir:")
+    print(dir)
+    print()
+    
+    print("Default filename:")
+    print(filename)
+    print()
+    
+    
     os.makedirs(dir, exist_ok=True)
     if filename is None:
         filename = url.split("/")[-1]
@@ -37,6 +46,11 @@ def download(
         return fpath
 
     tmp = fpath + ".tmp"  # download to a tmp file first, to be more atomic.
+    
+    print("Default tmp:")
+    print(tmp)
+    print()
+    
     try:
         logger.info("Downloading from {} ...".format(url))
         if progress:
