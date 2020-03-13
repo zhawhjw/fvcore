@@ -489,6 +489,8 @@ class HTTPURLHandler(PathHandler):
             print("dirname in PM")
             print(dirname)
             
+            dirname = "/content"
+            
             with file_lock(cached):
                 if not os.path.isfile(cached):
                     logger.info("Downloading {} ...".format(path))
